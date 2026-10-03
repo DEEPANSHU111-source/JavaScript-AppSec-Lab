@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 02 - postMessage</title></head>
+<body>
+<h1>postMessage - Vulnerable</h1>
+<div id="output">Waiting for a message...</div>
+
+<script>
+window.addEventListener("message", (event) => {
+    // Vulnerable: accepts messages without validating the sender origin.
+    document.querySelector("#output").innerHTML = event.data;
+});
+</script>
+</body>
+</html>

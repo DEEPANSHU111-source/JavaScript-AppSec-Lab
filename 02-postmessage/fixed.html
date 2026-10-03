@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 02 - postMessage Fixed</title></head>
+<body>
+<h1>postMessage - Fixed</h1>
+<div id="output">Waiting for a message...</div>
+
+<script>
+const TRUSTED_ORIGIN = window.location.origin;
+
+window.addEventListener("message", (event) => {
+    if (event.origin !== TRUSTED_ORIGIN) {
+        console.warn("Rejected message from:", event.origin);
+        return;
+    }
+
+    document.querySelector("#output").textContent = String(event.data);
+});
+</script>
+</body>
+</html>
