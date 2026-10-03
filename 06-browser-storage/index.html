@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 06 - Browser Storage</title></head>
+<body>
+<h1>Browser Storage Review</h1>
+<button id="store">Store Dummy Data</button>
+<button id="inspect">Inspect</button>
+<pre id="output"></pre>
+
+<script>
+document.querySelector("#store").addEventListener("click", () => {
+    localStorage.setItem("demo_access_token", "FAKE.LOCAL.TOKEN");
+    sessionStorage.setItem("demo_session_id", "FAKE-SESSION-ID");
+    document.cookie = "demo_preference=dark";
+    document.querySelector("#output").textContent = "Dummy values stored.";
+});
+
+document.querySelector("#inspect").addEventListener("click", () => {
+    const result = {
+        localStorage: localStorage.getItem("demo_access_token"),
+        sessionStorage: sessionStorage.getItem("demo_session_id"),
+        documentCookie: document.cookie
+    };
+
+    document.querySelector("#output").textContent =
+        JSON.stringify(result, null, 2);
+});
+</script>
+</body>
+</html>
