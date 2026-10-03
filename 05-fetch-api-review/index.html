@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 05 - Fetch Review</title></head>
+<body>
+<h1>Fetch/API Security Review</h1>
+<button id="run">Inspect Request Code</button>
+<pre id="output"></pre>
+
+<script>
+async function loadProfile() {
+    const response = await fetch("/api/profile", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
+
+    return response.json();
+}
+
+document.querySelector("#run").addEventListener("click", async () => {
+    try {
+        const data = await loadProfile();
+        document.querySelector("#output").textContent =
+            JSON.stringify(data, null, 2);
+    } catch (error) {
+        document.querySelector("#output").textContent =
+            "Expected in the standalone lab: " + error.message;
+    }
+});
+</script>
+</body>
+</html>
