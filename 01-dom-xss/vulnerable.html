@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 01 - DOM XSS</title></head>
+<body>
+<h1>DOM XSS - Vulnerable</h1>
+<p>Put text after <code>#</code> in the URL.</p>
+<div id="output"></div>
+
+<script>
+const value = decodeURIComponent(location.hash.slice(1));
+document.querySelector("#output").innerHTML = value;
+</script>
+</body>
+</html>

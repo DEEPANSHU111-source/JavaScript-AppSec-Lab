@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 01 - DOM XSS Fixed</title></head>
+<body>
+<h1>DOM XSS - Fixed</h1>
+<div id="output"></div>
+
+<script>
+const value = decodeURIComponent(location.hash.slice(1));
+document.querySelector("#output").textContent = value;
+</script>
+</body>
+</html>
