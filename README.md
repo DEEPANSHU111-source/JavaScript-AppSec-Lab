@@ -111,9 +111,6 @@ python3 -m http.server 8001
 
 Use only local/test data. These examples are intentionally vulnerable for education.
 
-## Suggested screenshots
-
-Take screenshots of:
 
 1. Repository tree in GitHub
 2. Lab 01 vulnerable source + browser result
@@ -127,25 +124,6 @@ Take screenshots of:
 10. Lab 08 WebSocket frames using a local demo message
 11. Lab 09 console showing the prototype pollution demonstration
 12. Lab 10 source showing the dangerous dynamic execution and the fixed allowlist approach
-
-### Screenshot rule
-
-Never put real passwords, API keys, session cookies, JWTs, bug-bounty credentials, or personal information in screenshots.
-
-## How to present this on a resume
-
-**JavaScript Application Security Research Lab**
-- Built a practical client-side AppSec lab covering DOM XSS, postMessage origin validation, JWT handling, browser storage, CORS, WebSockets, prototype pollution and dynamic code execution.
-- Performed source-to-sink tracing and documented vulnerable vs. secure implementations with reproduction and remediation steps.
-- Used browser DevTools to inspect DOM behavior, storage, network requests and client-side security decisions.
-
-## How to present it on LinkedIn
-
-Do not describe this as "I completed JavaScript."
-
-Describe it as:
-
-> Built a JavaScript Application Security Research Lab to practice reading client-side code, tracing untrusted data, reviewing API/authentication flows, and identifying security-sensitive browser behavior.
 
 ## References
 
