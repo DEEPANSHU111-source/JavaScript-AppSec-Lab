@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 03 - Client Auth</title></head>
+<body>
+<h1>Client-Side Authorization Demo</h1>
+<button id="admin">Open Admin Panel</button>
+<pre id="result"></pre>
+
+<script>
+const user = {
+    name: "demo-user",
+    role: "user"
+};
+
+document.querySelector("#admin").addEventListener("click", () => {
+    if (user.role !== "admin") {
+        document.querySelector("#result").textContent =
+            "Client blocked the button because role=user.";
+        return;
+    }
+
+    document.querySelector("#result").textContent =
+        "Admin panel displayed.";
+});
+</script>
+</body>
+</html>

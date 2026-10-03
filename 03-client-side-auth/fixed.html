@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 03 - Server Authorization Concept</title></head>
+<body>
+<h1>Authorization Boundary</h1>
+<pre id="result"></pre>
+
+<script>
+async function loadAdminData() {
+    const response = await fetch("/api/admin", {
+        credentials: "include"
+    });
+
+    if (!response.ok) {
+        document.querySelector("#result").textContent =
+            "Server denied the request.";
+        return;
+    }
+
+    document.querySelector("#result").textContent =
+        await response.text();
+}
+
+loadAdminData();
+</script>
+</body>
+</html>
