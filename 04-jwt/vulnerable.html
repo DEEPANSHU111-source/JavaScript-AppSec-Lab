@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Lab 04 - JWT Handling</title></head>
+<body>
+<h1>JWT Handling Review</h1>
+<button id="save">Save Dummy Token</button>
+<button id="read">Read Token</button>
+<pre id="output"></pre>
+
+<script>
+document.querySelector("#save").addEventListener("click", () => {
+    // Deliberately fake token for local demonstration.
+    localStorage.setItem(
+        "access_token",
+        "FAKE.LOCAL.TEST.TOKEN"
+    );
+    document.querySelector("#output").textContent = "Dummy token stored.";
+});
+
+document.querySelector("#read").addEventListener("click", () => {
+    const token = localStorage.getItem("access_token");
+    document.querySelector("#output").textContent =
+        token ? "Token exists in JavaScript-accessible storage." : "No token.";
+});
+</script>
+</body>
+</html>
